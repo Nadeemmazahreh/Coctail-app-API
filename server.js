@@ -16,7 +16,7 @@ server.listen(PORT, () => {
     console.log(`Server running at PORT:${PORT}/`);
   });
 
-mongoose.connect("mongodb://Nadeemmazahreh:Nadeem.mazahreh97@cluster0-shard-00-00.ekku4.mongodb.net:27017,cluster0-shard-00-01.ekku4.mongodb.net:27017,cluster0-shard-00-02.ekku4.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-h6w2g9-shard-0&authSource=admin&retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOURL,{ useNewUrlParser: true, useUnifiedTopology: true });
 
 //Schema 
 const CoctailSchema = new mongoose.Schema({
